@@ -1,0 +1,147 @@
+@import './_fonts.css';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "roboto-regular";
+}
+
+li{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hidden{
+    top: -100%;
+}
+
+.failed{
+    background-color: rgba(182, 48, 75, 0.603);
+    border: 1px solid crimson;
+}
+
+.failed::placeholder{
+    color: crimson;
+}
+
+li:nth-child(2){
+    margin: 15px 0;
+}
+
+button{
+    width: 100%;
+    padding: 15px 0;
+    background-color: rgb(32, 21, 49);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#__app{
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(32, 21, 49);
+}
+
+#register{
+    width: 60%;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#register .col-5{
+    width: 50%;
+}
+
+.col-5:first-child{
+    padding: 10px;
+}
+
+h1{
+    font-size: 3.2rem;
+    font-family: "roboto-bold";
+}
+
+.text{
+    margin: 10px 0;
+}
+
+.col-5 form{
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    gap: 10px;
+}
+
+.col-5 form label{
+    font-weight: 900;
+}
+
+.col-5 form input{
+    width: 100%;
+    padding: 15px 5px;
+    border-radius: 5px;
+}
+
+.col-5:last-child img{
+    width: 100%;
+}
+
+.overlay{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff88;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease;
+}
+
+.modal{
+    width: 40%;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.modal button:hover{
+    background: linear-gradient(45deg, rgb(173, 30, 30), rgb(202, 83, 14));
+}
+
+@media screen and (min-width: 350px) and (max-width: 450px) {
+    #register{
+        width: 100%;
+        border-radius: 0px;
+    }
+    
+    .box{
+        flex-direction: column-reverse;
+    }
+
+    #register .col-5{
+        width: 100%;
+    }
+
+    .modal{
+        width: 100%;
+    }
+}
