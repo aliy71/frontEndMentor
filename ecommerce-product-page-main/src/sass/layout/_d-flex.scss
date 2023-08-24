@@ -1,0 +1,11 @@
+@mixin d_flex($jc, $ai:center, $gap: 0) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    
+    @if $jc != 'center'{
+        gap: $gap;
+    } @else{
+        gap: 0;
+    }
+}

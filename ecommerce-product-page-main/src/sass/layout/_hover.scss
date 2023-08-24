@@ -1,0 +1,6 @@
+@mixin hover($bg, $cl, $size, $color, $shadow_size: 0, $shadow_color: 0) {
+    background: $bg;
+    color: $cl;
+    border: $size solid $color;
+    box-shadow: 0 0 $shadow_size $shadow_color;
+}

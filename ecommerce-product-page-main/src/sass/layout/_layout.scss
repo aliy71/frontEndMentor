@@ -1,0 +1,45 @@
+@import './d-flex';
+@import './padding';
+@import './text';
+@import './hover';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#__app{
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+
+    .container{
+        width: calc(1440px - 2 * 150px);
+        margin: 0 auto;
+    }
+
+    li{
+        list-style: none;
+    }
+
+    a{
+        text-decoration: none;
+    }
+    
+    button{
+        border: none;
+        outline: none;
+    }
+
+    img{
+        width: 100%;
+        object-fit: cover;
+    }
+
+    @for $item from 1 through 12 {
+        .col-#{$item}{
+            width: calc(100% / 12 * $item);
+        }
+    }
+}

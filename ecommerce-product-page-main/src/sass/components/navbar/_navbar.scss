@@ -1,0 +1,66 @@
+nav{
+    @include d_flex(space-between,center, _);
+    @include padMar(pad, 20px, 0);
+    border-bottom: 1px solid hsl(220, 14%, 75%);
+
+    h2{
+        a{
+            @include text(32px, 600, #000);
+        }
+    }
+
+    ul.col-8{
+        @include d_flex(start, center, 0px);
+
+        li{
+            position: relative;
+            
+            &::before{
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: '';
+                width: 1%;
+                height: 100%;
+                background: hsl(26, 100%, 55%);
+                transition: all .5s ease-in-out;
+                z-index: -1;
+            }
+
+            a{
+                display: inline-block;
+                @include text(16px, 400, hsl(220, 14%, 75%));
+                @include padMar(pad, 5px, 10px);
+            }
+
+            
+            &:hover::before,
+            &.active::before{
+                width: 100%;
+            }
+            
+            &:hover,&.active{
+                a{
+                    @include text(_, _, #1d2025);
+                }
+            }
+        }
+    }
+    .col-2{
+        @include d_flex(start, center, 20px);
+        
+        *{
+            cursor: pointer;
+        }
+
+        .user_image{
+            width: 45px;
+            transition: all .3s linear;
+
+            &:hover{
+                outline: 3px solid hsl(26, 100%, 55%);
+                border-radius: 50%;
+            }
+        }
+    }
+}

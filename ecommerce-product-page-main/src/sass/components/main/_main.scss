@@ -1,0 +1,27 @@
+main{
+    @include padMar(pad, 50px, 0);
+    .field{
+        @include d_flex(center, center, 20px);
+
+        .col-6{
+            .product_img{
+                max-width: 570px;
+                max-height: 450px;
+                border-radius: 15px;
+                overflow: hidden;
+
+                img{
+                    object-fit: cover;
+                }
+            }
+            .col-12{
+                @include d_flex(space-around, center, _);
+                @include padMar(mar, 15px, 0);
+                .col-2{
+                    border-radius: 15px;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}

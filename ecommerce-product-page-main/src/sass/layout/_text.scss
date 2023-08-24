@@ -1,0 +1,7 @@
+@mixin text($fs, $fw: 400, $color, $t_decoration:none, $l_style:none) {
+    font-size: $fs;
+    font-weight: $fw;
+    color: $color;
+    text-decoration: $t_decoration;
+    list-style: $l_style;
+}

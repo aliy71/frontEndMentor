@@ -1,0 +1,12 @@
+@mixin padMar($type: pad, $lineY, $lineX) {
+    @if $type == pad {
+        padding: $lineY $lineX;
+    }
+    @if $type == mar {
+        margin: $lineY $lineX;
+    }
+    @else{
+        margin: $lineY $lineX;
+        padding: $lineY $lineX;
+    }
+}
