@@ -10,6 +10,7 @@
 }
 
 #__app{
+    position: relative;
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
@@ -35,6 +36,14 @@
     img{
         width: 100%;
         object-fit: cover;
+    }
+
+    svg{
+        fill: #69707D;
+        transition: all .3s ease-in-out;
+        &:hover{
+            fill: #ff7d1a;
+        }
     }
 
     @for $item from 1 through 12 {

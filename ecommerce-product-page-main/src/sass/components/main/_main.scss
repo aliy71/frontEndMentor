@@ -1,18 +1,35 @@
 main{
     @include padMar(pad, 50px, 0);
     .field{
-        @include d_flex(center, center, 20px);
+        @include d_flex(center, center, 50px);
 
         .col-6{
             .product_img{
-                max-width: 570px;
-                max-height: 450px;
+                width: 570px;
+                height: 450px;
                 border-radius: 15px;
+                // @include d_flex(start, center);
+                position: relative;
+                scroll-behavior: smooth;
                 overflow: hidden;
 
                 img{
-                    object-fit: cover;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    transition: all .3s linear;
+                    // z-index: 999;
+
+                    @for $i from 1 through 4 {
+                        &:nth-child(#{$i}){
+                            transform: translateX(100% * ($i - 1))
+                        }
+                    }
                 }
+                
+                
             }
             .col-12{
                 @include d_flex(space-around, center, _);
@@ -20,6 +37,103 @@ main{
                 .col-2{
                     border-radius: 15px;
                     overflow: hidden;
+                    transition: all .5 linear;
+                    cursor: pointer;
+
+                    &::before{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        content: '';
+                        width: 100%;
+                        height: 0;
+                        background: #ffffff75;
+                    }
+
+                    &.active{
+                        position: relative;
+                        outline: 3px solid #ff7d1a;
+
+                        &::before{
+                            height: 100%;
+                        }
+                        
+                    }
+
+                    img{
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            &:last-child{
+                @include padMar(pad, 0, 30px);
+
+                h3{
+                    @include text(1.2rem, 600, #ff7d1a)
+                }
+
+                h1{
+                    @include text(3.2rem, 900, #000);
+                    line-height: 50px;
+                }
+
+                .text{
+                    @include text(1rem, 400, #000);
+                    @include padMar(mar, 1rem, 0);
+                }
+                .price{
+                    .current{
+                        @include text(2.4rem, 900, #000);
+                        @include d_flex(start, center, 10px);
+
+                        span{
+                            @include text(1.2rem, 600, #ff7d1a);
+                            @include padMar(pad, 5px, 10px);
+                            background: #ff7d1a79;
+                            border-radius: 5px;
+                        }
+                    }
+
+                    .old{
+                        @include text(1.2rem, 600, #b6bcc8)
+                    }
+                }
+                .col-12{
+                    @include d_flex(start, center, 10px);
+
+                    .col-4{
+                        @include d_flex(start, center);
+                        background-color: #b6bcc8;
+                        border-radius: 5px;
+
+                        button{
+                            width: 33.3%;
+                            @include text(1.6rem, 600, #ff7d1a);
+                            @include padMar(pad, 5px, 5px);
+                            border-radius: 5px;
+                            cursor: pointer;
+                        }
+                        b{
+                            width: 33.3%;
+                            text-align: center;
+                            @include padMar(pad, 5px, 5px);
+                            @include text(1.2rem, 600, #000);
+                        }
+                    }
+                    .btn{
+                        width: 50%;
+                        @include padMar(pad, 15px, 0);
+                        @include d_flex(center, center);
+                        background: #ff7d1a;
+                        border-radius: 5px;
+                        cursor: pointer;
+
+                        span{
+                            @include text(1.2rem, 600, #fff);
+                            margin-left: 20px;
+                        }
+                    }
                 }
             }
         }

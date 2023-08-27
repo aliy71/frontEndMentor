@@ -1,0 +1,15 @@
+.card{
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 25%;
+    height: 100%;
+    background: #69707D;
+    z-index: 1;
+    transition: all .5s linear;
+
+    &.active{
+        right: 0%;
+    }
+
+}
